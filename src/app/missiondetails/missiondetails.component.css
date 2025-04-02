@@ -1,0 +1,83 @@
+/* src/app/missiondetails/missiondetails.component.css */
+.details-container {
+    padding: 20px;
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .spinner-container,
+  .error-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    text-align: center;
+    flex-direction: column;
+  }
+  
+  .error-message mat-icon {
+    margin-right: 8px;
+  }
+  
+  .error-message {
+    color: red; /* Or use theme warn color */
+  }
+  
+  .back-button-error {
+      margin-top: 20px;
+  }
+  
+  .details-card {
+    margin-top: 20px;
+  }
+  
+  .details-patch-main {
+    display: block;
+    max-height: 300px;
+    width: auto; /* Maintain aspect ratio */
+    max-width: 90%; /* Prevent overflow */
+    object-fit: contain;
+    margin: 20px auto; /* Center image */
+  }
+  
+  mat-card-header .mat-card-avatar {
+    object-fit: cover;
+  }
+  
+  mat-card-content h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+  }
+  
+  mat-chip-list {
+    margin-bottom: 15px;
+  }
+  
+  .links-header {
+      margin-top: 25px;
+  }
+  
+  .links-section {
+    display: flex;
+    gap: 10px; /* Space between link buttons */
+    flex-wrap: wrap; /* Allow links to wrap */
+    margin-top: 10px;
+  }
+  
+  .links-section a mat-icon {
+    margin-right: 5px; /* Space between icon and text */
+    vertical-align: middle; /* Align icon nicely */
+  }
+  
+  mat-card-actions {
+    padding: 16px !important; /* Ensure padding around action buttons */
+    margin-top: 10px;
+  }
+  
+  mat-card-actions button mat-icon {
+      margin-right: 5px;
+      vertical-align: middle;
+  }
+  

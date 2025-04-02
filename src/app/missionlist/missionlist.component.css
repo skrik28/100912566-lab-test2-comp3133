@@ -1,0 +1,69 @@
+/* src/app/missionlist/missionlist.component.css */
+.list-container {
+  padding: 20px;
+}
+
+.spinner-container,
+.error-message,
+.no-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  text-align: center;
+  flex-direction: column;
+}
+
+.error-message mat-icon {
+  margin-right: 8px;
+}
+
+.error-message {
+  color: red; /* Or use theme warn color */
+}
+
+.no-results p {
+  color: grey;
+  font-style: italic;
+}
+
+mat-grid-list {
+  margin-top: 20px;
+}
+
+.mission-card {
+  width: 95%; /* Make card slightly smaller than tile */
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes actions to the bottom */
+}
+
+.mission-patch-main {
+  object-fit: contain; /* Keep aspect ratio, fit within bounds */
+  max-height: 150px; /* Limit image height */
+  margin: 10px auto; /* Center image */
+  display: block;
+}
+
+mat-card-header .mat-card-avatar {
+  object-fit: cover; /* Ensure avatar image covers the area */
+}
+
+.mission-details {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 15px;
+  min-height: 40px; /* Reserve some space for details */
+}
+
+mat-chip-list {
+  margin-top: 10px;
+}
+
+mat-card-actions {
+  padding-bottom: 16px !important; /* Ensure padding below buttons */
+}
+
+/* Add a placeholder image in src/assets if needed */
+/* e.g., src/assets/placeholder.png */

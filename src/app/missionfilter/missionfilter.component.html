@@ -1,0 +1,30 @@
+<!-- src/app/missionfilter/missionfilter.component.html -->
+<div class="filter-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Filter by Launch Year</mat-label>
+    <input
+      matInput
+      type="number"
+      placeholder="E.g., 2018"
+      [(ngModel)]="selectedYear"
+      (keyup.enter)="applyFilter()"
+    />
+    <button
+      *ngIf="selectedYear"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="clearFilter()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="applyFilter()"
+    class="filter-button"
+  >
+    Filter
+  </button>
+</div>

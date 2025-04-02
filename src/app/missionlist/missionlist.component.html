@@ -1,0 +1,56 @@
+<!-- src/app/missionlist/missionlist.component.html -->
+
+<div class="list-container">
+  
+  <h2>SpaceX Launches</h2>
+
+  <!-- Filter Component -->
+  <app-missionfilter (yearSelected)="filterMissionsByYear($event)"></app-missionfilter>
+
+  <!-- Loading Indicator -->
+  <div *ngIf="isLoading" class="spinner-container">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="error && !isLoading" class="error-message">
+    <mat-icon color="warn">error_outline</mat-icon>
+    <span>{{ error }}</span>
+  </div>
+
+  <!-- No Results Message -->
+  <div *ngIf="!isLoading && !error && filteredMissions.length === 0" class="no-results">
+    <p *ngIf="currentFilterYear">No missions found for the year {{ currentFilterYear }}.</p>
+    <p *ngIf="!currentFilterYear">No missions available.</p>
+  </div>
+
+  <!-- Mission List Grid -->
+  <mat-grid-list cols="1" rowHeight="1:1.1" gutterSize="20px" *ngIf="!isLoading && !error && filteredMissions.length > 0">
+     <!-- Adjust cols for responsiveness if needed, e.g., cols="{{ breakpointObserver.isMatched('(max-width: 600px)') ? 1 : 3 }}" -->
+     <!-- For simplicity, starting with 1 column -->
+    <mat-grid-tile *ngFor="let mission of filteredMissions">
+      <mat-card class="mission-card">
+        <mat-card-header>
+           <img mat-card-avatar [src]="mission.links?.mission_patch_small || 'assets/placeholder.png'" alt="{{ mission.mission_name }} Patch">
+          <mat-card-title>{{ mission.mission_name }} ({{ mission.launch_year }})</mat-card-title>
+          <mat-card-subtitle>Flight #{{ mission.flight_number }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class="mission-patch-main" [src]="mission.links?.mission_patch_small || 'assets/placeholder.png'" alt="{{ mission.mission_name }} Patch">
+        <mat-card-content>
+          <p class="mission-details">
+            {{ mission.details ? (mission.details | slice:0:100) + (mission.details.length > 100 ? '...' : '') : 'No details available.' }}
+          </p>
+          <mat-chip-list aria-label="Rocket Information">
+            <mat-chip color="primary" selected>Rocket: {{ mission.rocket?.rocket_name }}</mat-chip>
+            <mat-chip color="accent" selected>Type: {{ mission.rocket?.rocket_type }}</mat-chip>
+          </mat-chip-list>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <a mat-button [routerLink]="['/mission', mission.flight_number]">
+            View Details
+          </a>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

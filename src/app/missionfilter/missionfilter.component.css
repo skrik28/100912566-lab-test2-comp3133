@@ -1,0 +1,28 @@
+/* src/app/missionfilter/missionfilter.component.css */
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Spacing between elements */
+  padding: 10px 0;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+mat-form-field {
+  flex-grow: 1; /* Allow input field to take available space */
+  min-width: 150px; /* Minimum width for the input */
+}
+
+.filter-button {
+  height: 55px; /* Match input field height */
+}
+
+/* Remove spinners from number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+}

@@ -1,0 +1,27 @@
+/* src/app/app.component.css */
+mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Keep toolbar above content */
+  }
+  
+  .content {
+    padding-top: 10px; /* Add some padding below the sticky toolbar */
+    padding-bottom: 60px; /* Add padding above the footer */
+    min-height: calc(100vh - 64px - 50px); /* Full height minus toolbar and footer */
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    font-size: 0.8em;
+    color: #555;
+    height: 50px;
+  }
+  
