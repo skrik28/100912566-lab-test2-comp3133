@@ -1,59 +1,91 @@
-# 100912566LabTest2Comp3133
+# 100912566-lab-test2-comp3133 (SpaceX Launch Tracker)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+This project is an Angular application developed for the COMP3133 Lab Test 2. It displays information about SpaceX launches fetched from the public SpaceX REST API (v3).
 
-## Development server
+## Features
 
-To start a local development server, run:
+*   **Mission List:** Displays a list of all SpaceX launches, including flight number, name, year, details, rocket information, and patch image.
+*   **Filter by Year:** Allows users to filter the launch list by the specific year of launch using the API.
+*   **Mission Details:** Shows detailed information for a selected mission, including a larger patch image, full details, rocket info, and links to external resources (article, Wikipedia, video).
+*   **Responsive Design:** Uses Angular Material components for a clean and adaptive user interface.
+*   **Data Service:** Centralized service (`SpacexService`) for handling API requests.
+*   **Data Interface:** Defines the structure of the mission data using a TypeScript interface (`Mission`).
+
+## Technologies Used
+
+*   [Angular](https://angular.io/) (v16+ recommended)
+*   [Angular CLI](https://angular.io/cli)
+*   [Angular Material](https://material.angular.io/)
+*   [TypeScript](https://www.typescriptlang.org/)
+*   [RxJS](https://rxjs.dev/)
+*   [SpaceX REST API (v3)](https://docs.spacexdata.com/?version=v3)
+*   HTML5 / CSS3
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+*   [Node.js](https://nodejs.org/) (LTS version recommended) - includes npm
+*   [Angular CLI](https://angular.io/cli) installed globally (`npm install -g @angular/cli`)
+*   [Git](https://git-scm.com/)
+
+## Installation
+
+To get a local copy up and running, follow these simple steps:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/skrik28/100912566-lab-test2-comp3133.git
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd 1009125667-lab-test2-comp3133
+    ```
+3.  **Install NPM packages:**
+    ```bash
+    npm install
+    ```
+
+## Running the Application (Development)
+
+Run the following command to start the Angular development server:
 
 ```bash
-ng serve
-```
+ng serve -o
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+This will build the application, start a development server, watch for file changes, and automatically open the application in your default browser at http://localhost:4200/.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Building for Production
+To create an optimized production build, run:
+bash
 
-```bash
-ng generate component component-name
-```
+ng build --configuration production
+# Or simply 'ng build' if 'production' is the default build configuration
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The build artifacts will be stored in the dist/1234567-lab-test2-comp3133/ directory. These files are ready to be deployed to a static file server or hosting platform.
 
-```bash
-ng generate --help
-```
 
-## Building
+Deployment
 
-To build the project run:
+This application has been deployed and is accessible online.
 
-```bash
-ng build
-```
+    Live URL: https://100912566-lab-test2-comp3133.vercel.app/
+    Hosting Platform: Vercel
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+API Reference
 
-## Running unit tests
+This project utilizes the public SpaceX REST API (v3) for fetching launch data.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+    Base URL: https://api.spacexdata.com/v3
+    Endpoints Used:
+        /launches (Get all launches)
+        /launches?launch_year={year} (Filter launches by year)
+        /launches?flight_number={flight_number} (Get specific launch by flight number)
+    API Documentation: SpaceX API Documentation (v3)
 
-```bash
-ng test
-```
+Course Information
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+    Student ID: 100912566
+    Course: COMP3133 - Full Stack Development II
+    Assignment: Lab Test 2
