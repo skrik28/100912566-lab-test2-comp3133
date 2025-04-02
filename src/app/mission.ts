@@ -21,7 +21,6 @@ export interface Links {
     rocket_id: string;
     rocket_name: string;
     rocket_type: string;
-    // Add other rocket properties if needed
   }
   
   // Main interface for the Mission data
@@ -61,6 +60,6 @@ export interface Links {
     timeline?: { // Optional property
       [key: string]: number | null;
     };
-    crew: any | null; // Define more specifically if needed
+    crew: any | null;
   }
   

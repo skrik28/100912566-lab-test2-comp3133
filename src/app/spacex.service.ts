@@ -36,14 +36,13 @@ export class SpacexService {
 
   // Fetch a single mission by flight number
   getMissionByFlightNumber(flightNumber: number): Observable<Mission> {
-    // Note: The API returns an array even for a specific flight number query
+
     const url = `${this.REST_API_SERVER}/launches?flight_number=${flightNumber}`;
     console.log(`Fetching mission ${flightNumber} from: ${url}`);
-    // We expect an array with one element, so we map the result
+
     return this.httpClient.get<Mission[]>(url).pipe(
       tap((data) => console.log(`Fetched mission data:`, data)),
-      // Map the array result to a single Mission object
-      // If the array is empty (not found), this will cause an error downstream
+
       map((missions) => {
         if (missions && missions.length > 0) {
           return missions[0];

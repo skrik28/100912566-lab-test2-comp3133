@@ -26,8 +26,6 @@
 
   <!-- Mission List Grid -->
   <mat-grid-list cols="1" rowHeight="1:1.1" gutterSize="20px" *ngIf="!isLoading && !error && filteredMissions.length > 0">
-     <!-- Adjust cols for responsiveness if needed, e.g., cols="{{ breakpointObserver.isMatched('(max-width: 600px)') ? 1 : 3 }}" -->
-     <!-- For simplicity, starting with 1 column -->
     <mat-grid-tile *ngFor="let mission of filteredMissions">
       <mat-card class="mission-card">
         <mat-card-header>
