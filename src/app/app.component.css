@@ -10,7 +10,7 @@ mat-toolbar {
     padding-bottom: 60px; /* Add padding above the footer */
     min-height: calc(100vh - 64px - 50px); /* Full height minus toolbar and footer */
   }
-  
+
   .footer {
     position: fixed;
     bottom: 0;
